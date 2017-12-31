@@ -20,5 +20,6 @@ int main(void)
 This can then be compiled by running (assuming it is saved as `main.cxx`):
 
 ```
-export SHOROOT=location/of/SimpleHarmonicOscillator.hxx
-`g++ -std=c++14 -I $SHOROOT $SHOROOT/SimpleHarmonicOscillator.cxx main.cxx` 
+$ export SHOROOT=location/of/SimpleHarmonicOscillator.hxx
+$ g++ -std=c++14 -I $SHOROOT $SHOROOT/SimpleHarmonicOscillator.cxx main.cxx
+```
