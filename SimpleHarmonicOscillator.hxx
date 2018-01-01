@@ -39,4 +39,23 @@ class SpringMass
         double getEquilibriumPosition();
 };
 
+class SimplePendulum
+{
+    private:
+        double _mass = 0;
+        double _length = 0;
+        double _initial_dis = 0;
+        double _ang_vel = 0;
+        double _get_displacement(double);
+        void _record_data(double, double);
+    public:
+        SimplePendulum(double mass, double length);
+
+        void displace(double amplitude, double time=10);
+
+        double getAcceleration(double);
+        
+        double getAngularVelocity();
+};
+
 #endif
