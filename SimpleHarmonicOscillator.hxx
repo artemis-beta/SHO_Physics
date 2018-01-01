@@ -4,7 +4,7 @@
 #include <cmath>
 #include <fstream>
 
-const double g = 9.81;
+const double g = -9.81;
 
 // SpringMass Class declaration, class calculates the displacement of a mass
 // of magnitude 'm' on a spring with a spring constant 'k'. Results of 
@@ -16,9 +16,11 @@ class SpringMass
         double _damp_coef = 0;              // Coefficient of Damping 'b'
         double _spg_const = 0;              // Spring constant 'k'
         double _initial_dis = 0;            // Initial displacement
+        double _equil_dis = 0;
         double _ang_vel = 0;                // Angular velocity 'omega'
         double _get_displacement(double);   // Get the displacement at time 't'
         void _record_data(double, double);  // Write data point to output file
+        double _get_damped_max_at(double);
     public:
         // Class arguments and structure
         SpringMass(double mass, double spg_const, double damp_coef=0);
@@ -29,6 +31,12 @@ class SpringMass
         
         // Get the value of the angular velocity
         double getAngularVelocity();
+
+        // Get the acceleration taking upward to be the positive
+        double getAcceleration(double);
+
+        // Get Equilibrium position
+        double getEquilibriumPosition();
 };
 
 #endif
